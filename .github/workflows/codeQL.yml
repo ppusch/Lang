@@ -7,7 +7,11 @@ on:
 jobs:
   CodeQL-Build:
     runs-on: ubuntu-latest
-
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript', 'python']
+        
     permissions:
       # required for all workflows
       security-events: write
@@ -23,3 +27,8 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
+          matrix:
+              language: ['javascript', 'python']
+        
+ 
+    
