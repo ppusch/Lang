@@ -26,9 +26,6 @@ jobs:
         uses: github/codeql-action/init@v1
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
-          matrix:
-              language: ['javascript', 'python']
-        
+        uses: github/codeql-action/analyze@v1 
  
     
